@@ -1,0 +1,10 @@
+;(require 'color-theme)
+;(color-theme-initialize)
+;(load-file "~/.emacs.d/color-theme-wombat.el")
+;(color-theme-wombat)
+
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/")
+;;(load-theme 'wombat t)
+;;(load-theme 'cyberpunk t)
+(load-theme 'zenburn t)

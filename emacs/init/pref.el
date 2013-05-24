@@ -1,3 +1,6 @@
+;;Set the font
+(set-face-attribute 'default nil :font "Ubuntu Mono-14")
+
 ;; Use the command key as meta
 (setq mac-command-modifier 'meta)
 

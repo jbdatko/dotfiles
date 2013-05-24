@@ -15,16 +15,24 @@
                 (mode . c-mode)
                 (mode . perl-mode)
                 (mode . python-mode)
-                (mode . emacs-lisp-mode)
+		(mode . scheme-mode)
                 ;; etc
                 ))
+	    ("Emacs Lisp"
+	     (mode . emacs-lisp-mode))
 	    ("tux" ;;drexel cs computer
 	     (filename . "/ssh:jbd65@tux:~/.emacs"))
             ("ERC"   (mode . erc-mode))
+	    ("Fundamental"
+	     (mode . fundamental-mode))
+	    ("Text"
+	     (mode . text-mode))
 	    ("LaTeX"
 	     (or
 	      (mode . bibtex-mode)
-	      (mode . latex-mode)))))))
+	      (mode . latex-mode)))
+	    ("dired" (mode . dired-mode))
+))))
 
 (add-hook 'ibuffer-mode-hook
   (lambda ()

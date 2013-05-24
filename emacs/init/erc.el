@@ -20,7 +20,7 @@
    "Connect to IRC."
    (interactive)
    (erc-tls :server "irc.freenode.net" :port 6697
-        :nick "jbdatko" :full-name "Josh Datko"))
+        :nick "jbdatko" :full-name "Josh Datko" :password freenode-jbdatko-pass))
 
    ;; (erc-tls :server "irc.freenode.net" :port 6697
    ;;      :nick "jbdatko" :full-name "Josh Datko" :password freenode-jbdatko-pass))

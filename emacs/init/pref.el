@@ -53,3 +53,6 @@
 
 ;;undo-tree
 (require 'undo-tree)
+
+;;backspace for most terminals is C-h
+(define-key global-map "\C-h" 'backward-delete-char)

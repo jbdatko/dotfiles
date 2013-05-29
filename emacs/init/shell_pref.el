@@ -1,3 +1,11 @@
+;;term and shell stuff
+
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
+
+(setq explicit-shell-file-name "/bin/bash")
+
+
 
 ;;eshell
 (defun base-name (path)

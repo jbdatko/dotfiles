@@ -1,3 +1,9 @@
+;;Non external package preferences should go here
+
+;;initial geometry
+(add-to-list 'default-frame-alist '(height . 80))
+(add-to-list 'default-frame-alist '(width . 80))
+
 ;;Set the font
 (set-face-attribute 'default nil :font "Ubuntu Mono-14")
 
@@ -7,10 +13,7 @@
 ;; "y or n" instead of "yes or no"
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; Scratch buffer mode to text, vice fundamental mode
-(setq initial-major-mode 'text-mode)
-
-;;Likewise, default mode for new buffers to text mode
+;;default mode for new buffers to text mode
 (setq-default major-mode 'text-mode)
 
 ;; Highlight regions and add special behavior to regions
@@ -56,3 +59,20 @@
 
 ;;backspace for most terminals is C-h
 (define-key global-map "\C-h" 'backward-delete-char)
+
+;;spelling
+(setq ispell-program-name "aspell"
+      ispell-dictionary "english")
+
+;;Flyspell with text mode
+(add-hook 'text-mode-hook 'flyspell-mode)
+
+;;don't open up new frames by default
+(setq ns-pop-up-frames nil)
+
+(windmove-default-keybindings)
+
+(winner-mode 1)
+
+;;magit shortcut
+(global-set-key (kbd "C-x g") 'magit-status)

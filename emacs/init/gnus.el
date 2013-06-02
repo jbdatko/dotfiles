@@ -27,15 +27,13 @@
 		(nnimap-address "imap.mail.drexel.edu")
 		(nnimap-server-port 993))))
 
+(add-to-list 'gnus-secondary-select-methods '(nntp "news.gwene.org"))
 ;;(setq mail-sources '(maildir :path "~/temp/"
 ;;			     :subdirs ("cur" "new")))
 
 
 
 ;; Inline images?
-    (setq mm-attachment-override-types '("image/.*"))
+(setq mm-attachment-override-types '("image/.*"))
 
-
-(setq mm-discouraged-alternatives '("text/html" "text/richtext"))
-
-(setq mm-text-html-renderer nil)
+(setq mm-text-html-renderer 'gnus-w3m)

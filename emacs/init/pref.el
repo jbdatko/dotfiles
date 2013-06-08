@@ -57,9 +57,6 @@
 ;;undo-tree
 (require 'undo-tree)
 
-;;backspace for most terminals is C-h
-(define-key global-map "\C-h" 'backward-delete-char)
-
 ;;spelling
 (setq ispell-program-name "aspell"
       ispell-dictionary "english")
@@ -76,3 +73,11 @@
 
 ;;magit shortcut
 (global-set-key (kbd "C-x g") 'magit-status)
+
+;;hooks
+(add-hook 'scheme-mode-hook 'auto-fill-mode)
+(add-hook 'scheme-mode-hook 'paredit-mode)
+
+(add-hook 'prog-mode-hook 'auto-complete-mode)
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)
+(add-hook 'prog-mode-hook 'auto-fill-mode)

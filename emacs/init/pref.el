@@ -86,6 +86,11 @@
 (add-hook 'scheme-mode-hook 'auto-fill-mode)
 (add-hook 'scheme-mode-hook 'paredit-mode)
 (add-hook 'emacs-lisp-mode 'paredit-mode)
+(add-hook 'lisp-interaction-mode-hook 'paredit-mode)
+
+(add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
 
 (add-hook 'prog-mode-hook 'auto-complete-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)

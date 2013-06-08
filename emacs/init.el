@@ -81,6 +81,7 @@ editing Markdown files" t)
 
 ;;auto detect indent
 ;;http://emacs-fu.blogspot.com/2008/12/auto-detecting-indentation-style.html
+(declare-function dtrt-indent-mode "dtrt-indent.el" boolean)
 (add-hook 'c-mode-common-hook
   (lambda()
     (require 'dtrt-indent)
@@ -105,8 +106,4 @@ editing Markdown files" t)
 
 (ido-hacks-mode 1)
 
-;;expand-region
-(add-to-list 'load-path "~/.emacs.d/packages/expand-region.el/")
-(require 'expand-region)
-(global-set-key (kbd "C-@") 'er/expand-region)
 (pending-delete-mode t)

@@ -14,8 +14,8 @@
 
 (setq package-archives
       '(("gnu" . "http://elpa.gnu.org/packages/")
-        ("marmalade" . "http://marmalade-repo.org/packages/")
-        ("Tromey" . "http://tromey.com/elpa/")
+	("marmalade" . "http://marmalade-repo.org/packages/")
+	("Tromey" . "http://tromey.com/elpa/")
 	("melpa" . "http://melpa.milkbox.net/packages/")))
 (package-initialize)
 
@@ -36,7 +36,7 @@
 (load "~/.emacs.d/init/gnus")
 (load "~/.emacs.d/init/org")
 (load "~/.emacs.d/init/desktop")
-(load "~/.emacs.d/init/ibuffer")
+(load "~/.emacs.d/init/ibuffer_pref")
 (load "~/.emacs.d/init/shell_pref")
 (load "~/.emacs.d/init/unfill")
 (load "~/.emacs.d/init/themes")
@@ -55,7 +55,7 @@
 compiled file exists."
   (interactive)
   (when (and (eq major-mode 'emacs-lisp-mode)
-             (file-exists-p (byte-compile-dest-file buffer-file-name)))
+	     (file-exists-p (byte-compile-dest-file buffer-file-name)))
     (byte-compile-file buffer-file-name)))
 
 (add-hook 'after-save-hook 'byte-compile-current-buffer)
@@ -98,11 +98,11 @@ editing Markdown files" t)
 
 ;;diredx
  (add-hook 'dired-load-hook
-               (lambda ()
-                 ;; Bind dired-x-find-file.
-                 (setq dired-x-hands-off-my-keys nil)
-                 (load "dired-x")
-                 ))
+	       (lambda ()
+		 ;; Bind dired-x-find-file.
+		 (setq dired-x-hands-off-my-keys nil)
+		 (load "dired-x")
+		 ))
 
 (ido-hacks-mode 1)
 

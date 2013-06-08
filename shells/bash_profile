@@ -1,0 +1,43 @@
+#This is the file that terminal uses
+
+export PATH=/usr/local/mysql/bin:/usr/local/bin:/usr/texbin:/usr/local/Cellar/ruby/1.9.3-p286/bin:/usr/local/sbin:$PATH
+
+echo -e "Welcome back!"
+echo -e "Kernel Information: " `uname -smr`
+echo -e "${COLOR_BROWN}`bash --version`"
+echo -ne "${COLOR_GRAY}Uptime: "; uptime
+echo -ne "${COLOR_GRAY}Server time is: "; date
+
+/usr/local/bin/fortune
+
+#color ls, ah so nice
+alias ls='ls -GFh'
+alias h='history'
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+#more colors
+export TERM=xterm-color
+
+export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
+
+export CLICOLOR=1
+
+export EDITOR=emacsclient ; export EDITOR
+export TEXEDIT='emacsclient +%d %s'
+
+#tips from http://blog.toddwerth.com/entries/4
+export HISTCONTROL=ignoredups # Ignores dupes in the history
+
+alias hm='cd /Users/jdatko/repos/hangman'
+
+export PSQL_EDITOR=emacsclient
+
+
+alias e='emacsclient -t'
+
+# check the window size after each command and if necessary,
+# update LINES and COLUMNS
+shopt -s checkwinsize
+export HISTTIMEFORMAT="%a %b %d - %r "

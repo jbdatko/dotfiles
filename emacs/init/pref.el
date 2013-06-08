@@ -40,10 +40,18 @@
 (set-default 'fill-column 79)
 
 ;; All backup files go to the same place
-(setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
 
 ;; Deleting trailing whitespace
 (add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
+(add-hook 'before-save-hook 'whitespace-cleanup)
+;;makefiles are specials (tabs...)
+(add-hook 'makefile-mode-hook 'indent-tabs-mode)
 
 ;; Merges the clipboard with the kill ring
 (setq x-select-enable-clipboard t)
@@ -77,7 +85,40 @@
 ;;hooks
 (add-hook 'scheme-mode-hook 'auto-fill-mode)
 (add-hook 'scheme-mode-hook 'paredit-mode)
+(add-hook 'emacs-lisp-mode 'paredit-mode)
 
 (add-hook 'prog-mode-hook 'auto-complete-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 (add-hook 'prog-mode-hook 'auto-fill-mode)
+
+(defun google ()
+  "Google the selected region if any, display a query prompt otherwise."
+  (interactive)
+  (browse-url
+   (concat
+    "http://www.google.com/search?ie=utf-8&oe=utf-8&q="
+    (url-hexify-string (if mark-active
+	 (buffer-substring (region-beginning) (region-end))
+       (read-string "Google: "))))))
+
+
+;; view full path in frame title
+(setq frame-title-format
+      '((:eval (if (buffer-file-name)
+		   (abbreviate-file-name (buffer-file-name))
+		 "%b"))))
+
+(global-hl-line-mode +1)
+
+(defun open-with (arg)
+  "Open visited file in default external program. With a prefix ARG always
+prompt for command to use."
+  (interactive "P")
+  (when buffer-file-name
+    (shell-command (concat
+		    (cond
+		     ((and (not arg) (eq system-type 'darwin)) "open")
+		     ((and (not arg) (member system-type '(gnu gnu/linux gnu/kfreebsd))) "xdg-open")
+		     (t (read-shell-command "Open current file with: ")))
+		    " "
+		    (shell-quote-argument buffer-file-name)))))

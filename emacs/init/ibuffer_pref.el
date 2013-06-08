@@ -21,6 +21,9 @@
 		(mode . perl-mode)
 		(mode . python-mode)
 		(mode . scheme-mode)
+		(mode . scheme-interaction-mode)
+		(mode . prolog-mode)
+		(mode . prolog-inferior-mode)
 		;; etc
 		))
 	    ("Emacs Lisp"

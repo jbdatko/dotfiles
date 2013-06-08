@@ -1,5 +1,12 @@
 ;; Josh Datko's Emacs config
 
+;; Quick access to this file from
+;;   http://emacsredux.com/blog/2013/05/18/instant-access-to-init-dot-el/
+(defun find-user-init-file ()
+  "Edit the `user-init-file', in another window."
+  (interactive)
+  (find-file-other-window user-init-file))
+(global-set-key (kbd "C-c I") 'find-user-init-file)
 
 ;; Recommend for use of emacsclient as the editor
 (require 'server)
@@ -42,7 +49,6 @@
 (load "~/.emacs.d/init/scheme_pref")
 (load "~/.emacs.d/init/java_pref")
 
-
 ;;auto-byte compile
 (defun byte-compile-current-buffer ()
   "`byte-compile' current buffer if it's emacs-lisp-mode and
@@ -74,6 +80,7 @@ editing Markdown files" t)
 (setq tramp-default-method "ssh")
 
 ;;auto detect indent
+;;http://emacs-fu.blogspot.com/2008/12/auto-detecting-indentation-style.html
 (add-hook 'c-mode-common-hook
   (lambda()
     (require 'dtrt-indent)
@@ -96,7 +103,7 @@ editing Markdown files" t)
                  (load "dired-x")
                  ))
 
-
+(ido-hacks-mode 1)
 
 ;;expand-region
 (add-to-list 'load-path "~/.emacs.d/packages/expand-region.el/")

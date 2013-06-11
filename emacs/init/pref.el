@@ -85,7 +85,7 @@
 ;;hooks
 (add-hook 'scheme-mode-hook 'auto-fill-mode)
 (add-hook 'scheme-mode-hook 'paredit-mode)
-(add-hook 'emacs-lisp-mode 'paredit-mode)
+(add-hook 'emacs-lisp-mode-hook 'paredit-mode)
 (add-hook 'lisp-interaction-mode-hook 'paredit-mode)
 
 (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)

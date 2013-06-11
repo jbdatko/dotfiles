@@ -44,7 +44,7 @@
 (load "~/.emacs.d/init/latex")
 (load "~/.emacs.d/init/keys")
 (load "~/.emacs.d/init/yasnippet")
-(load "~/.emacs.d/init/python")
+(load "~/.emacs.d/init/python_pref")
 (load "~/.emacs.d/init/erc")
 (load "~/.emacs.d/init/scheme_pref")
 (load "~/.emacs.d/init/java_pref")
@@ -104,6 +104,7 @@ editing Markdown files" t)
 		 (load "dired-x")
 		 ))
 
+(require 'ido-hacks)
 (ido-hacks-mode 1)
 
 (pending-delete-mode t)

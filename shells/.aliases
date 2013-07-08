@@ -1,0 +1,64 @@
+#!/bin/sh
+#
+# .aliases - Common aliases for bash and zsh
+#
+# Copyright © 2013 Joshua Datko
+# 
+# Author: Joshua Datko <jbdatko@gmail.com>
+# URL: https://github.com/jbdatko/prelude
+# Version: 1.0.0
+# Keywords: convenience
+
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with GNU Emacs; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+# Boston, MA 02110-1301, USA.
+
+# Code:
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+alias sagi='sudo apt-get install'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# Emacs aliases
+alias e="emacsclient -c"
+alias et="emacsclient -t"
+alias E="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
+
+alias killmacs="kill $(ps aux | grep '[e]macs' | awk '{print $2}')"
+# Easy config access
+alias zshconfig="emacsclient -c ~/.zshrc"
+alias bashconfig="emacsclient -c ~/.bashrc"
+alias aliasconfig="emacsclient -c ~/.aliases"
+alias ohmyzsh="emacsclient -c ~/.oh-my-zsh"
+
+# .aliases ends here

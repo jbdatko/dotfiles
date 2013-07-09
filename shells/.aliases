@@ -3,7 +3,7 @@
 # .aliases - Common aliases for bash and zsh
 #
 # Copyright © 2013 Joshua Datko
-# 
+#
 # Author: Joshua Datko <jbdatko@gmail.com>
 # URL: https://github.com/jbdatko/prelude
 # Version: 1.0.0
@@ -50,8 +50,7 @@ alias sagi='sudo apt-get install'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Emacs aliases
-alias e="emacsclient -c"
-alias et="emacsclient -t"
+alias e=emacsclient
 alias E="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
 
 alias killmacs="kill $(ps aux | grep '[e]macs' | awk '{print $2}')"

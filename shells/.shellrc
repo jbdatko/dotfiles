@@ -3,7 +3,7 @@
 # .shellrc - Common configurations to bash and zsh
 #
 # Copyright © 2013 Joshua Datko
-# 
+#
 # Author: Joshua Datko <jbdatko@gmail.com>
 # URL: https://github.com/jbdatko/prelude
 # Version: 1.0.0
@@ -28,8 +28,12 @@
 
 
 # cd and display directory
-function cdl() {
+cdl() {
     cd $@ && ls
+}
+
+dired() {
+    emacsclient -e "(dired \"$PWD\")"
 }
 
 export EDITOR="emacsclient -c"

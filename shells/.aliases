@@ -59,5 +59,6 @@ alias zshconfig="emacsclient -c ~/.zshrc"
 alias bashconfig="emacsclient -c ~/.bashrc"
 alias aliasconfig="emacsclient -c ~/.aliases"
 alias ohmyzsh="emacsclient -c ~/.oh-my-zsh"
+alias shellconfig="emacsclient -c ~/.shellrc"
 
 # .aliases ends here

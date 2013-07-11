@@ -32,3 +32,6 @@ bindkey -m ^[Oc stuff ]  #"}]^f"
 
 bindkey -m “^[<” stuff “g”
 bindkey -m “^[>” stuff “G”
+
+# connect to USB0
+bind ^u screen /dev/ttyUSB0 115200 -fn

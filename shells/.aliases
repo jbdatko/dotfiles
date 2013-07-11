@@ -61,4 +61,6 @@ alias aliasconfig="emacsclient -c ~/.aliases"
 alias ohmyzsh="emacsclient -c ~/.oh-my-zsh"
 alias shellconfig="emacsclient -c ~/.shellrc"
 
+alias updiff="git shortlog ..upstream/master"
+
 # .aliases ends here

@@ -1,5 +1,5 @@
 # Use C-\ as the command key
-escape ^\\\
+escape ^Jj
 
 # emacs keybindings for navigation in copy mode
 markkeys ^B=Y:^F=V:h=^B:l=^F:0=^A:$=^E
@@ -35,3 +35,7 @@ bindkey -m “^[>” stuff “G”
 
 # connect to USB0
 bind ^u screen /dev/ttyUSB0 115200 -fn
+bind ^j screen ssh jalapeno -l root -X
+
+
+# .screenrc ends here

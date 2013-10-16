@@ -37,6 +37,7 @@ dired() {
     emacsclient -e "(dired \"$PWD\")"
 }
 
+
 # upload ssh key,
 ssh_upload(){
     if [[ $# -ne 2 ]]; then
@@ -44,6 +45,23 @@ ssh_upload(){
     else
         cat ~/.ssh/id_rsa.pub | ssh $1@$2 'cat >> ~/.ssh/authorized_keys'
     fi
+}
+
+NORMAL=$(tput sgr0)
+GREEN=$(tput setaf 2; tput bold)
+YELLOW=$(tput setaf 3)
+RED=$(tput setaf 1)
+
+function red() {
+    echo -e "$RED$*$NORMAL"
+}
+
+function green() {
+    echo -e "$GREEN$*$NORMAL"
+}
+
+function yellow() {
+    echo -e "$YELLOW$*$NORMAL"
 }
 
 export EDITOR="emacsclient -c"

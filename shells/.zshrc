@@ -10,10 +10,6 @@ ZSH_THEME="awesomepanda"
 # aliases are in .aliases to maintain consistency in zsh and bash
 source ~/.aliases
 
-if [[ -f ~/.hprc ]]; then
-    source ~/.hprc
-fi
-
 #just for fun, but only in interactive shells
 if [[ -o interactive && -t 0 ]]; then
     fortune
@@ -45,7 +41,8 @@ source $ZSH/oh-my-zsh.sh
 source ~/.shellrc
 
 # Customize to your needs...
-export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+export PATH=$PATH:~/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/sbin:
+       /bin:/usr/games:/usr/texbin
 
 bindkey '\C-w' kill-region
 
@@ -62,3 +59,6 @@ gentags(){
 }
 
 # .zshrc ends here
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

@@ -37,6 +37,15 @@ dired() {
     emacsclient -e "(dired \"$PWD\")"
 }
 
+# upload ssh key,
+ssh_upload(){
+    if [[ $# -ne 2 ]]; then
+        echo "usage: username host"
+    else
+        cat ~/.ssh/id_rsa.pub | ssh $1@$2 'cat >> ~/.ssh/authorized_keys'
+    fi
+}
+
 export EDITOR="emacsclient -c"
 export VISUAL="emacsclient -c"
 export ALTERNATE_EDITOR="nano"

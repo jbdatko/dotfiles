@@ -58,7 +58,14 @@ gentags(){
     echo ***/(*.h|*.c|*.cpp|*.cc) | xargs etags
 }
 
+# AVR dude command for the pocket program.  Just specify the file
+pp(){
+    sudo avrdude -c usbtiny -B 1 -p atmega328p -U flash:w:$1 -v
+}
+
 # .zshrc ends here
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# BeagleBone Black Stuff

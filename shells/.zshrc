@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="awesomepanda"
+ZSH_THEME="gentoo"
 
 # aliases are in .aliases to maintain consistency in zsh and bash
 source ~/.aliases
@@ -35,14 +35,13 @@ fi
 # Which plugins would you like to load?
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git svn screen colored-man gpg-agent)
+plugins=(git svn screen colored-man gpg-agent autojump brew debian pip ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.shellrc
 
 # Customize to your needs...
-export PATH=$PATH:~/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/sbin:
-       /bin:/usr/games:/usr/texbin
+export PATH=$PATH:~/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/sbin:/usr/games:/usr/textbin
 
 bindkey '\C-w' kill-region
 

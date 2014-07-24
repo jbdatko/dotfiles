@@ -1,4 +1,38 @@
-;; Josh Datko's Emacs config
+;;; init.el --- Main macs config File
+;;
+;; Copyright (c) 2013 Joshua Datko
+;;
+;; Author: Joshua Datko <jbdatko@gmail.com>
+;; URL: https://github.com/jbdatko/dotfiles/
+;; Version: 1.0.0
+;; Keywords: convenience
+
+;; This file is not part of GNU Emacs.
+
+;;; Commentary:
+
+;; Initialization file for Emacs configuration.
+;; Inspired by http://batsov.com/prelude .  Eventually, I may build up to
+;; something like that, but I like knowing what the customizations do :)
+
+;;; License:
+
+;; This program is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU General Public License
+;; as published by the Free Software Foundation; either version 3
+;; of the License, or (at your option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs; see the file COPYING.  If not, write to the
+;; Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+
+;;; Code:
 
 ;; Quick access to this file from
 ;;   http://emacsredux.com/blog/2013/05/18/instant-access-to-init-dot-el/
@@ -108,3 +142,6 @@ editing Markdown files" t)
 (ido-hacks-mode 1)
 
 (pending-delete-mode t)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; init.el ends here

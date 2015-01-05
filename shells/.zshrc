@@ -13,7 +13,10 @@ source ~/.aliases
 #just for fun, but only in interactive shells
 if [[ -o interactive && -t 0 ]]; then
     fortune
+    # Get the number of CryptoCapes
+    alias getccq='python ~/bin/get_cc_quantity.py'
 fi
+
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -35,7 +38,7 @@ fi
 # Which plugins would you like to load?
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git svn screen colored-man gpg-agent autojump brew debian pip ssh-agent)
+plugins=(git svn screen colored-man gpg-agent autojump brew debian pip ssh-agent osx)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.shellrc
@@ -62,9 +65,14 @@ pp(){
     sudo avrdude -c usbtiny -B 1 -p atmega328p -U flash:w:$1 -v
 }
 
-# .zshrc ends here
+
+dragon(){
+    avrdude  -v -v -v -v -patmega328p -cdragon_isp -Pusb -Uflash:w:$1:i
+}
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # BeagleBone Black Stuff
+
+# .zshrc ends here

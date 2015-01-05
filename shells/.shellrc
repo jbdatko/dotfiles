@@ -40,10 +40,10 @@ dired() {
 
 # upload ssh key,
 ssh_upload(){
-    if [[ $# -ne 2 ]]; then
-        echo "usage: username host"
+    if [[ $# -ne 1 ]]; then
+        echo "usage: host\nNOTE: host should be set in ~/.ssh/config"
     else
-        cat ~/.ssh/id_rsa.pub | ssh $1@$2 'cat >> ~/.ssh/authorized_keys'
+        cat ~/.ssh/id_rsa.pub | ssh $1 'cat >> ~/.ssh/authorized_keys'
     fi
 }
 

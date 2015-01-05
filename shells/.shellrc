@@ -37,6 +37,10 @@ dired() {
     emacsclient -e "(dired \"$PWD\")"
 }
 
+# opens the file in a new buffer
+ff() {
+    emacsclient -e "(find-file \"$1\")"
+}
 
 # upload ssh key,
 ssh_upload(){

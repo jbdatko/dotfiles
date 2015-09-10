@@ -70,8 +70,22 @@ dragon(){
     avrdude  -v -v -v -v -patmega328p -cdragon_isp -Pusb -Uflash:w:$1:i
 }
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+burn_uno_loader(){
+    avrdude  -c dragon_isp -p atmega328p -P usb -b 115200 -e -u -U lock:w:0x3f:m -U efuse:w:0x05:m -U hfuse:w:0xDE:m -U lfuse:w:0xFF:m
+    avrdude  -c dragon_isp -p atmega328p -P usb -b 115200 -U flash:w:optiboot_atmega328.hex -U lock:w:0x2f:m
+}
+
+stk(){
+    avrdude -patmega328p -c stk500v2 -P/dev/ttyACM1 -Uflash:w:$1:i
+}
+
+pathadd() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="$1:$PATH"
+    fi
+}
+
+keychain
 
 # BeagleBone Black Stuff
 
